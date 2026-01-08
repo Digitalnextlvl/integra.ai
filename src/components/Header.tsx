@@ -24,7 +24,7 @@ const Header = () => {
           <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Entrar
           </a>
-          <Button className="rounded-full px-6 bg-brand-500 hover:bg-brand-600 text-foreground font-medium">
+          <Button className="rounded-full px-6 bg-brand-500 hover:bg-brand-600 text-neutral-900 font-medium">
             <User className="w-4 h-4 mr-2" />
             Criar conta
           </Button>
@@ -52,7 +52,7 @@ const Header = () => {
           Entrar
         </a>
         <div className="mt-6">
-          <Button className="rounded-full px-6 w-full bg-brand-500 hover:bg-brand-600 text-foreground font-medium">
+          <Button className="rounded-full px-6 w-full bg-brand-500 hover:bg-brand-600 text-neutral-900 font-medium">
             <User className="w-4 h-4 mr-2" />
             Criar conta
           </Button>
