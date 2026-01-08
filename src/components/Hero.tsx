@@ -43,7 +43,8 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight leading-[1.1] mb-6"
           >
-            Escale suas vendas<br />
+            Escale suas vendas
+            <br />
             sem aumentar a equipe.
           </motion.h1>
 
