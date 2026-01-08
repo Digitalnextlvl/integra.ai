@@ -6,8 +6,8 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-brand-400 px-4 py-3">
-      <nav className="max-w-7xl mx-auto bg-card rounded-full px-4 md:px-8 py-3 shadow-lg flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 px-4 py-3">
+      <nav className="max-w-7xl mx-auto bg-card rounded-full px-4 md:px-8 py-3 shadow-lg border border-border/50 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="text-foreground font-bold tracking-tight text-xl flex items-center">
           integra<span className="text-brand-500">.AI</span>
@@ -24,7 +24,7 @@ const Header = () => {
           <a href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Entrar
           </a>
-          <Button variant="hero" className="rounded-full px-6">
+          <Button className="rounded-full px-6 bg-brand-500 hover:bg-brand-600 text-foreground font-medium">
             <User className="w-4 h-4 mr-2" />
             Criar conta
           </Button>
@@ -52,7 +52,7 @@ const Header = () => {
           Entrar
         </a>
         <div className="mt-6">
-          <Button variant="hero" className="rounded-full px-6 w-full">
+          <Button className="rounded-full px-6 w-full bg-brand-500 hover:bg-brand-600 text-foreground font-medium">
             <User className="w-4 h-4 mr-2" />
             Criar conta
           </Button>
