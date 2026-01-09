@@ -69,11 +69,10 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(({ logos, index, curren
           alt={currentLogo.name}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 m-auto max-h-[80%] max-w-[90%] object-contain"
-          style={{ filter: "brightness(0)" }}
-          initial={{ y: 18, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -18, opacity: 0 }}
+          className="absolute inset-0 m-auto max-h-[80%] max-w-[90%] object-contain brightness-0"
+          initial={{ y: 18, opacity: 0, filter: "blur(10px)" }}
+          animate={{ y: 0, opacity: 0.6, filter: "blur(0px)" }}
+          exit={{ y: -18, opacity: 0, filter: "blur(10px)" }}
           whileHover={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         />
