@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { ShoppingCart, PackageCheck, BrainCircuit, ArrowUpRight, Sparkles, Lock, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen bg-brand-400 overflow-hidden pt-28 pb-0">
+  return <section className="relative min-h-screen bg-brand-400 overflow-hidden pt-28 pb-0">
       {/* Large decorative circle */}
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] -translate-y-1/2 translate-x-1/4">
         <div className="w-full h-full rounded-full border-[80px] border-white/20" />
@@ -14,21 +12,19 @@ const Hero = () => {
         {/* Left Content */}
         <div className="text-left">
           {/* Social Proof */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 mb-8"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }} className="flex items-center gap-3 mb-8">
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div 
-                  key={i} 
-                  className="w-10 h-10 rounded-full bg-brand-600 border-2 border-brand-400 flex items-center justify-center text-white text-xs font-bold"
-                >
+              {[1, 2, 3, 4].map(i => <div key={i} className="w-10 h-10 rounded-full bg-brand-600 border-2 border-brand-400 flex items-center justify-center text-white text-xs font-bold">
                   {String.fromCharCode(64 + i)}
-                </div>
-              ))}
+                </div>)}
             </div>
             <div>
               <p className="text-sm font-bold text-foreground">1 milhão de</p>
@@ -37,33 +33,46 @@ const Hero = () => {
           </motion.div>
 
           {/* Title */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground tracking-tight leading-[1.1] mb-6"
-          >
+          <motion.h1 initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.7,
+          delay: 0.1
+        }} className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight leading-[1.1] mb-6 md:text-5xl">
             Escale suas vendas
             <br />
             sem aumentar a equipe.
           </motion.h1>
 
           {/* Subtitle */}
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-lg text-foreground/80 max-w-lg mb-10 leading-relaxed"
-          >
+          <motion.p initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.7,
+          delay: 0.2
+        }} className="text-lg text-foreground/80 max-w-lg mb-10 leading-relaxed">
             A IA da Integra sincroniza estoques, automatiza anúncios e dá controle financeiro total. A plataforma que trabalha enquanto você dorme.
           </motion.p>
 
           {/* CTA Button */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.7,
+          delay: 0.3
+        }}>
             <Button size="lg" className="rounded-full px-8 py-6 text-base bg-card text-foreground hover:bg-card/90 shadow-xl border-2 border-foreground/10">
               Testar Grátis
             </Button>
@@ -71,12 +80,16 @@ const Hero = () => {
         </div>
 
         {/* Right Content - Mockups */}
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative flex items-end justify-center lg:justify-end"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        x: 50
+      }} animate={{
+        opacity: 1,
+        x: 0
+      }} transition={{
+        duration: 0.8,
+        delay: 0.4
+      }} className="relative flex items-end justify-center lg:justify-end">
           {/* Dashboard Mockup */}
           <div className="relative z-10 w-full max-w-lg">
             <div className="bg-neutral-950 rounded-t-xl md:rounded-t-2xl p-1.5 md:p-3 shadow-2xl transform hover:scale-[1.01] transition-transform duration-700 border-x border-t border-neutral-800">
@@ -187,8 +200,6 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
