@@ -1,27 +1,34 @@
 import { motion } from "framer-motion";
 import { Wand2, PieChart, Zap, LayoutDashboard, Check } from "lucide-react";
-
 const Solutions = () => {
-  return (
-    <section id="solucao" className="py-24 px-6 relative bg-neutral-50/50">
+  return <section id="solucao" className="py-24 px-6 relative bg-neutral-50/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 max-w-3xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-3xl md:text-5xl font-bold text-foreground tracking-tight mb-6"
-          >
+          <motion.h2 initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.7
+        }} className="text-3xl font-bold text-foreground tracking-tight mb-6 md:text-4xl">
             Um cérebro digital para o seu e-commerce.
           </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-muted-foreground text-lg md:text-xl"
-          >
+          <motion.p initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.7,
+          delay: 0.1
+        }} className="text-muted-foreground text-lg md:text-xl">
             Centralize Mercado Livre, Shopee, Amazon e loja própria em um único lugar, potencializado por inteligência artificial real.
           </motion.p>
         </div>
@@ -29,13 +36,17 @@ const Solutions = () => {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Large Feature */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-2 bg-card p-8 md:p-10 rounded-3xl relative overflow-hidden group border border-border card-shadow hover:shadow-xl transition-all duration-500"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }} className="md:col-span-2 bg-card p-8 md:p-10 rounded-3xl relative overflow-hidden group border border-border card-shadow hover:shadow-xl transition-all duration-500">
             <div className="flex flex-col h-full justify-between relative z-10">
               <div className="mb-8">
                 <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6">
@@ -52,13 +63,18 @@ const Solutions = () => {
           </motion.div>
 
           {/* Analysis Feature */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-card p-8 md:p-10 rounded-3xl relative overflow-hidden group border border-border card-shadow hover:shadow-xl transition-all duration-500"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6,
+          delay: 0.1
+        }} className="bg-card p-8 md:p-10 rounded-3xl relative overflow-hidden group border border-border card-shadow hover:shadow-xl transition-all duration-500">
             <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6">
               <PieChart className="w-6 h-6" />
             </div>
@@ -77,13 +93,17 @@ const Solutions = () => {
           </motion.div>
 
           {/* Sync Feature */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-card p-8 md:p-10 rounded-3xl relative overflow-hidden group border border-border card-shadow hover:shadow-xl transition-all duration-500"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }} className="bg-card p-8 md:p-10 rounded-3xl relative overflow-hidden group border border-border card-shadow hover:shadow-xl transition-all duration-500">
             <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center mb-6">
               <Zap className="w-6 h-6" />
             </div>
@@ -92,13 +112,18 @@ const Solutions = () => {
           </motion.div>
 
           {/* Dashboard Feature Dark */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="md:col-span-2 bg-neutral-900 text-primary-foreground p-8 md:p-10 rounded-3xl flex flex-col md:flex-row items-center gap-10 relative overflow-hidden group shadow-2xl"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6,
+          delay: 0.1
+        }} className="md:col-span-2 bg-neutral-900 text-primary-foreground p-8 md:p-10 rounded-3xl flex flex-col md:flex-row items-center gap-10 relative overflow-hidden group shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500 rounded-full filter blur-[120px] opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity" />
 
             <div className="flex-1 relative z-10">
@@ -138,8 +163,6 @@ const Solutions = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Solutions;
