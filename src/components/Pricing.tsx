@@ -121,7 +121,7 @@ const Pricing = () => {
             <p className="text-foreground/80 mb-8 max-w-2xl mx-auto font-medium">
               Nossa equipe de especialistas analisa sua loja atual e monta o plano perfeito para você escalar sem desperdício.
             </p>
-            <Button variant="hero" size="lg" className="inline-flex items-center gap-2">
+            <Button variant="hero" size="lg" className="inline-flex items-center gap-2 rounded-full">
                Agendar conversa rápida
             </Button>
           </div>

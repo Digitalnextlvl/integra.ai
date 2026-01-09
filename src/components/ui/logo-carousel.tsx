@@ -20,7 +20,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(({ logo }) => {
         alt={logo.name}
         loading="lazy"
         decoding="async"
-        className="max-h-[90%] max-w-[95%] object-contain"
+        className="max-h-[90%] max-w-[95%] object-contain grayscale opacity-60"
       />
     </div>
   )
