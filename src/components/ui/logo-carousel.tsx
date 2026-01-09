@@ -48,8 +48,8 @@ const distributeLogos = (allLogos: Logo[], columnCount: number, minPerColumn = 3
 }
 
 const LogoColumn: React.FC<LogoColumnProps> = React.memo(({ logos, index, currentTime }) => {
-  const cycleInterval = 2000
-  const columnDelay = index * 200
+  const cycleInterval = 3500
+  const columnDelay = index * 400
   const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
   const currentIndex = Math.floor(adjustedTime / cycleInterval)
 
@@ -70,11 +70,10 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(({ logos, index, curren
           loading="lazy"
           decoding="async"
           className="absolute inset-0 m-auto max-h-[80%] max-w-[90%] object-contain brightness-0"
-          initial={{ y: 18, opacity: 0, filter: "blur(10px)" }}
-          animate={{ y: 0, opacity: 0.6, filter: "blur(0px)" }}
-          exit={{ y: -18, opacity: 0, filter: "blur(10px)" }}
-          whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          initial={{ y: 20, opacity: 0, filter: "blur(8px)" }}
+          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+          exit={{ y: -20, opacity: 0, filter: "blur(8px)" }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
         />
       </AnimatePresence>
     </motion.div>
