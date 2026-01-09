@@ -27,7 +27,7 @@ const Partners = () => {
                 key={`${partner.name}-${index}`}
                 src={partner.logo}
                 alt={partner.name}
-                className="h-10 w-auto opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer object-contain flex-shrink-0"
+                className="h-10 w-auto brightness-50 grayscale opacity-60 hover:brightness-100 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer object-contain flex-shrink-0"
               />
             ))}
           </div>
