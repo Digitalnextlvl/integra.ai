@@ -12,25 +12,7 @@ const Hero = () => {
         {/* Left Content */}
         <div className="text-left">
           {/* Social Proof */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.5
-        }} className="flex items-center gap-3 mb-8">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map(i => <div key={i} className="w-10 h-10 rounded-full bg-brand-600 border-2 border-brand-400 flex items-center justify-center text-white text-xs font-bold">
-                  {String.fromCharCode(64 + i)}
-                </div>)}
-            </div>
-            <div>
-              <p className="text-sm font-bold text-foreground">1 milhão de</p>
-              <p className="text-sm font-bold text-foreground">vendas otimizadas</p>
-            </div>
-          </motion.div>
+          
 
           {/* Title */}
           <motion.h1 initial={{
