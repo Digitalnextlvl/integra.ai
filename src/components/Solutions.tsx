@@ -29,7 +29,7 @@ const Solutions = () => {
           duration: 0.7,
           delay: 0.1
         }} className="text-muted-foreground text-lg md:text-xl">
-            Centralize Mercado Livre, Shopee, Amazon e loja própria em um único lugar, potencializado por inteligência artificial real.
+            Centralize Mercado Livre, Shopee, Amazon e loja própria em um único lugar — com nossa IA que responde perguntas com base no anúncio.
           </motion.p>
         </div>
 
