@@ -13,9 +13,9 @@ const allLogos: Logo[] = [
 
 const Partners = () => {
   return (
-    <div className="border-y border-border bg-card py-16 overflow-hidden">
+    <div className="bg-brand-400 py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest text-center mb-10">
+        <p className="text-xs font-semibold text-foreground/70 uppercase tracking-widest text-center mb-10">
           Empresas parceiras da Integra AI
         </p>
         <LogoCarousel logos={allLogos} columnCount={4} />
