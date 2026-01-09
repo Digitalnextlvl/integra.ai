@@ -1,18 +1,12 @@
 "use client"
 
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  type SVGProps,
-} from "react"
+import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
-interface Logo {
+export interface Logo {
   name: string
   id: number
-  img: React.ComponentType<SVGProps<SVGSVGElement>>
+  src: string
 }
 
 interface LogoColumnProps {
@@ -30,17 +24,22 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled
 }
 
-const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
+const distributeLogos = (allLogos: Logo[], columnCount: number, minPerColumn = 3): Logo[][] => {
+  const safeColumnCount = Math.max(1, columnCount)
   const shuffled = shuffleArray(allLogos)
-  const columns: Logo[][] = Array.from({ length: columnCount }, () => [])
+  const columns: Logo[][] = Array.from({ length: safeColumnCount }, () => [])
+
+  if (shuffled.length === 0) return columns
 
   shuffled.forEach((logo, index) => {
-    columns[index % columnCount].push(logo)
+    columns[index % safeColumnCount].push(logo)
   })
 
-  const maxLength = Math.max(...columns.map((col) => col.length))
+  const maxLength = Math.max(0, ...columns.map((col) => col.length))
+  const targetLength = Math.max(minPerColumn, maxLength)
+
   columns.forEach((col) => {
-    while (col.length < maxLength) {
+    while (col.length < targetLength) {
       col.push(shuffled[Math.floor(Math.random() * shuffled.length)])
     }
   })
@@ -48,37 +47,39 @@ const distributeLogos = (allLogos: Logo[], columnCount: number): Logo[][] => {
   return columns
 }
 
-const LogoColumn: React.FC<LogoColumnProps> = React.memo(
-  ({ logos, index, currentTime }) => {
-    const cycleInterval = 2000
-    const columnDelay = index * 200
-    const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
-    const currentIndex = Math.floor(adjustedTime / cycleInterval)
-    const CurrentLogo = useMemo(() => logos[currentIndex].img, [logos, currentIndex])
+const LogoColumn: React.FC<LogoColumnProps> = React.memo(({ logos, index, currentTime }) => {
+  const cycleInterval = 2000
+  const columnDelay = index * 200
+  const adjustedTime = (currentTime + columnDelay) % (cycleInterval * logos.length)
+  const currentIndex = Math.floor(adjustedTime / cycleInterval)
 
-    return (
-      <motion.div
-        className="relative h-14 w-24 md:h-16 md:w-28 overflow-hidden"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-      >
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={`${logos[currentIndex].id}-${currentIndex}`}
-            className="absolute inset-0 flex items-center justify-center"
-            initial={{ y: 20, opacity: 0, filter: "blur(8px)" }}
-            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            exit={{ y: -20, opacity: 0, filter: "blur(8px)" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            <CurrentLogo className="h-10 w-10 md:h-12 md:w-12 max-h-[80%] max-w-[80%] object-contain text-muted-foreground" />
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
-    )
-  }
-)
+  const currentLogo = useMemo(() => logos[currentIndex], [logos, currentIndex])
+
+  return (
+    <motion.div
+      className="relative h-14 w-28 md:h-16 md:w-36 overflow-hidden"
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.45, ease: "easeOut" }}
+    >
+      <AnimatePresence mode="popLayout">
+        <motion.img
+          key={`${currentLogo.id}-${currentIndex}`}
+          src={currentLogo.src}
+          alt={currentLogo.name}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 m-auto max-h-[80%] max-w-[90%] object-contain brightness-0"
+          initial={{ y: 18, opacity: 0, filter: "blur(10px)" }}
+          animate={{ y: 0, opacity: 0.6, filter: "blur(0px)" }}
+          exit={{ y: -18, opacity: 0, filter: "blur(10px)" }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        />
+      </AnimatePresence>
+    </motion.div>
+  )
+})
 
 LogoColumn.displayName = "LogoColumn"
 
@@ -101,8 +102,7 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   }, [updateTime])
 
   useEffect(() => {
-    const distributedLogos = distributeLogos(logos, columnCount)
-    setLogoSets(distributedLogos)
+    setLogoSets(distributeLogos(logos, columnCount))
   }, [logos, columnCount])
 
   return (
