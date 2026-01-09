@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-4 py-3">
-      <nav className="max-w-7xl mx-auto bg-card rounded-full px-4 md:px-8 py-3 shadow-lg border border-border/50 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="text-foreground font-bold tracking-tight text-xl flex items-center">
           integra<span className="text-brand-500">.AI</span>
